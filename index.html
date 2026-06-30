@@ -21,7 +21,7 @@ section{padding:78px 4.5vw}.two{display:grid;grid-template-columns:.9fr 1.5fr;ga
 .gallery-section{background:var(--white);}.center{text-align:center}.filters{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:22px 0 28px}.pill{border:1px solid var(--line);border-radius:999px;padding:8px 18px;background:#fff;color:#1b261f;font-weight:650;font-size:14px}.pill.active{background:var(--deep);color:#fff;border-color:var(--deep)}
 .gallery-grid{display:grid;grid-template-columns:1.1fr 1fr 1.05fr;grid-template-rows:260px 260px;gap:14px;margin-top:34px}.gallery-item{border-radius:12px;overflow:hidden;box-shadow:var(--shadow);background:#fff}.gallery-item img{width:100%;height:100%;display:block;object-fit:cover}.gallery-item.plan{grid-column:3;grid-row:1 / span 2}.gallery-item.plan img{object-fit:contain;background:#fff;padding:8px}.gallery-note{margin-top:18px;background:#fff8ed;border:1px solid var(--line);border-radius:12px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.gallery-note p{margin:0;color:#2a332d}
 .calendar{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
-.calendar-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}.calendar-title{font-family:Georgia,'Times New Roman',serif;font-size:28px;margin:0;color:var(--green)}.cal-nav{display:flex;gap:10px}.cal-nav button,.admin-toggle{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;font-weight:900;cursor:pointer}.cal-week,.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.cal-week div{text-align:center;font-size:12px;text-transform:uppercase;color:var(--muted);font-weight:900;padding:8px}.cal-day{min-height:72px;border:1px solid #efe4d4;background:#fff;border-radius:12px;padding:9px;text-align:left;cursor:pointer;transition:.18s ease;position:relative}.cal-day:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.08)}.cal-day .num{font-weight:900}.cal-day .status{display:block;font-size:11px;margin-top:8px;color:#617065}.cal-day.available{background:#fbfff7}.cal-day.booked{background:#f4e0db;color:#8a3024;cursor:not-allowed;text-decoration:line-through}.cal-day.booked .status{color:#8a3024}.cal-day.selected,.cal-day.in-range{background:#132318;color:#fff;border-color:#132318}.cal-day.empty{background:transparent;border:0;cursor:default;box-shadow:none}.calendar-side{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}.booking-panel{background:#fbf6ee;border:1px solid var(--line);border-radius:18px;padding:24px}.booking-panel h3{font-family:Georgia,'Times New Roman',serif;font-size:30px;margin:0 0 10px}.booking-detail{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:12px 0;color:#2d382f}.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;color:var(--muted);font-size:14px}.dot{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:7px}.dot.avail{background:#dcebd6}.dot.book{background:#e2b3a8}.dot.sel{background:#132318}.owner-panel{display:none;margin-top:18px;background:#fff8ed;border:1px solid var(--line);border-radius:14px;padding:16px}.owner-panel.show{display:block}.owner-panel input{padding:11px;border:1px solid var(--line);border-radius:8px;margin:5px;max-width:150px}.owner-panel button{margin:5px;border:0;border-radius:8px;background:var(--deep);color:#fff;padding:11px 14px;font-weight:900;cursor:pointer}.owner-panel button.gold{background:var(--gold)}
+.calendar-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}.calendar-title{font-family:Georgia,'Times New Roman',serif;font-size:28px;margin:0;color:var(--green)}.cal-nav{display:flex;gap:10px}.cal-nav button,.admin-toggle{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;font-weight:900;cursor:pointer}.cal-nav button:disabled{opacity:.4;cursor:not-allowed}.cal-week,.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.cal-week div{text-align:center;font-size:12px;text-transform:uppercase;color:var(--muted);font-weight:900;padding:8px}.cal-day{min-height:72px;border:1px solid #efe4d4;background:#fff;border-radius:12px;padding:9px;text-align:left;cursor:pointer;transition:.18s ease;position:relative}.cal-day:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.08)}.cal-day .num{font-weight:900}.cal-day .status{display:block;font-size:11px;margin-top:8px;color:#617065}.cal-day.available{background:#fbfff7}.cal-day.past{background:#f3f0ea;color:#a19a8e;cursor:not-allowed;opacity:.68}.cal-day.past:hover{transform:none;box-shadow:none}.cal-day.past .status{color:#a19a8e}.cal-day.booked{background:#f4e0db;color:#8a3024;cursor:not-allowed;text-decoration:line-through}.cal-day.booked .status{color:#8a3024}.cal-day.selected,.cal-day.in-range{background:#132318;color:#fff;border-color:#132318}.cal-day.empty{background:transparent;border:0;cursor:default;box-shadow:none}.calendar-side{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}.booking-panel{background:#fbf6ee;border:1px solid var(--line);border-radius:18px;padding:24px}.booking-panel h3{font-family:Georgia,'Times New Roman',serif;font-size:30px;margin:0 0 10px}.booking-detail{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:12px 0;color:#2d382f}.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;color:var(--muted);font-size:14px}.dot{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:7px}.dot.avail{background:#dcebd6}.dot.book{background:#e2b3a8}.dot.sel{background:#132318}.dot.past{background:#d8d2c8}.owner-panel{display:none;margin-top:18px;background:#fff8ed;border:1px solid var(--line);border-radius:14px;padding:16px}.owner-panel.show{display:block}.owner-panel input{padding:11px;border:1px solid var(--line);border-radius:8px;margin:5px;max-width:150px}.owner-panel button{margin:5px;border:0;border-radius:8px;background:var(--deep);color:#fff;padding:11px 14px;font-weight:900;cursor:pointer}.owner-panel button.gold{background:var(--gold)}
 .rates-section{background:var(--white)}.rates{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.rate-card{text-align:center;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center}.rate-icon{width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:#f4eadc;color:var(--gold);font-size:38px;margin-bottom:22px}.rate-card h3{font-family:Georgia,'Times New Roman',serif;font-size:28px;margin:0}.small-line{width:48px;height:2px;background:var(--gold);margin:16px auto 22px}.rate-card p{font-size:18px;color:#333;max-width:330px;margin:0}.contact-strip{margin-top:36px;border-radius:14px;background:#f6ecdd;border:1px solid var(--line);padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}.contact-strip strong{color:var(--gold);letter-spacing:.18em;text-transform:uppercase}.form{display:grid;gap:14px}.form input,.form textarea,.form select{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:9px;font:inherit}.form textarea{min-height:120px}.map{width:100%;height:360px;border:0;border-radius:14px;box-shadow:var(--shadow)}footer{padding:38px 4.5vw;background:#07130d;color:#fff}
 @media(max-width:1050px){html{scroll-padding-top:0}#suite,#gallery,#amenities,#availability,#rates,#location,#book{scroll-margin-top:0}.calendar-side{grid-template-columns:1fr}.cal-day{min-height:58px;padding:7px}.cal-day .status{display:none}.links{display:none}.nav{position:static;height:auto;padding:18px 5vw}.hero{display:block;min-height:0}.hero-copy{padding:46px 5vw}.hero-image{min-height:430px}.quick{grid-template-columns:1fr 1fr}.info-bar,.two,.features,.rates{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr;grid-template-rows:auto}.gallery-item{min-height:280px}.gallery-item.plan{grid-column:auto;grid-row:auto}.hero h1{font-size:58px}.brand-title{font-size:18px}.contact-strip{align-items:flex-start;flex-direction:column}.gallery-note{align-items:flex-start;flex-direction:column}}
 </style>
@@ -82,7 +82,7 @@ section{padding:78px 4.5vw}.two{display:grid;grid-template-columns:.9fr 1.5fr;ga
 </div>
 <div class="cal-week"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
 <div class="cal-days" id="calendarDays"></div>
-<div class="legend"><span><i class="dot avail"></i>Available</span><span><i class="dot book"></i>Booked</span><span><i class="dot sel"></i>Selected</span></div>
+<div class="legend"><span><i class="dot avail"></i>Available</span><span><i class="dot book"></i>Booked</span><span><i class="dot sel"></i>Selected</span><span><i class="dot past"></i>Past dates unavailable</span></div>
 <button class="admin-toggle" id="adminToggle" style="margin-top:18px" type="button">Owner: Edit booked dates</button>
 <div class="owner-panel" id="ownerPanel">
 <strong>Owner date blocker</strong><br/>
@@ -110,6 +110,7 @@ section{padding:78px 4.5vw}.two{display:grid;grid-template-columns:.9fr 1.5fr;ga
 <script>
 const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 let today = new Date();
+today = new Date(today.getFullYear(), today.getMonth(), today.getDate());
 let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
 let selectedStart = null;
 let selectedEnd = null;
@@ -121,6 +122,8 @@ function parseDate(s){const [y,m,d]=s.split('-').map(Number); return new Date(y,
 function addDays(d,n){const x=new Date(d); x.setDate(x.getDate()+n); return x}
 function diffDays(a,b){return Math.round((b-a)/(1000*60*60*24))}
 function isBooked(key){return bookedDates.has(key)}
+function isPastDate(d){return d < today}
+function isCurrentMonthView(){return viewDate.getFullYear() === today.getFullYear() && viewDate.getMonth() === today.getMonth()}
 function isInSelectedRange(d){ if(!selectedStart || !selectedEnd) return false; return d > selectedStart && d < selectedEnd; }
 function formatShort(d){return d ? d.toLocaleDateString(undefined,{month:'short',day:'numeric'}) : 'Select date'}
 function saveBooked(){localStorage.setItem('bowRiverBookedDatesV8', JSON.stringify([...bookedDates]));}
@@ -128,6 +131,7 @@ function renderCalendar(){
   const title = document.getElementById('calendarTitle');
   const days = document.getElementById('calendarDays');
   title.textContent = `${monthNames[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
+  document.getElementById('prevMonth').disabled = isCurrentMonthView();
   days.innerHTML = '';
   const first = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
   const last = new Date(viewDate.getFullYear(), viewDate.getMonth()+1, 0);
@@ -136,11 +140,14 @@ function renderCalendar(){
     const d = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
     const key = dateKey(d);
     const el = document.createElement('button');
+    const past = isPastDate(d);
     el.type='button'; el.className='cal-day available';
+    if(past) el.className='cal-day past';
     if(isBooked(key)) el.className='cal-day booked';
-    if((selectedStart && key===dateKey(selectedStart)) || (selectedEnd && key===dateKey(selectedEnd))) el.className='cal-day selected';
-    if(isInSelectedRange(d)) el.className='cal-day in-range';
-    el.innerHTML = `<span class="num">${day}</span><span class="status">${isBooked(key)?'Booked':'Available'}</span>`;
+    if(!past && !isBooked(key) && ((selectedStart && key===dateKey(selectedStart)) || (selectedEnd && key===dateKey(selectedEnd)))) el.className='cal-day selected';
+    if(!past && !isBooked(key) && isInSelectedRange(d)) el.className='cal-day in-range';
+    el.disabled = past || isBooked(key);
+    el.innerHTML = `<span class="num">${day}</span><span class="status">${past?'Unavailable':(isBooked(key)?'Booked':'Available')}</span>`;
     el.addEventListener('click', () => selectDate(d));
     days.appendChild(el);
   }
@@ -148,8 +155,8 @@ function renderCalendar(){
 }
 function selectDate(d){
   const key=dateKey(d);
-  if(isBooked(key)) return;
-  if(!selectedStart || selectedEnd || d < selectedStart){ selectedStart = d; selectedEnd = null; }
+  if(isPastDate(d) || isBooked(key)) return;
+  if(!selectedStart || selectedEnd || d <= selectedStart){ selectedStart = d; selectedEnd = null; }
   else {
     let x = new Date(selectedStart);
     while(x <= d){ if(isBooked(dateKey(x))) return alert('Those dates include a booked night. Please choose different dates.'); x = addDays(x,1); }
@@ -170,7 +177,7 @@ function updatePanel(){
     if(checkin) checkin.value = ci; if(checkout) checkout.value = co;
   }
 }
-document.getElementById('prevMonth').addEventListener('click',()=>{viewDate.setMonth(viewDate.getMonth()-1); renderCalendar();});
+document.getElementById('prevMonth').addEventListener('click',()=>{ if(isCurrentMonthView()) return; viewDate.setMonth(viewDate.getMonth()-1); renderCalendar();});
 document.getElementById('nextMonth').addEventListener('click',()=>{viewDate.setMonth(viewDate.getMonth()+1); renderCalendar();});
 document.getElementById('adminToggle').addEventListener('click',()=>document.getElementById('ownerPanel').classList.toggle('show'));
 function editRange(makeBooked){
