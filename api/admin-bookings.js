@@ -1,4 +1,5 @@
 const { supabaseFetch, TABLE } = require('./_supabase');
+const { sendApproved, sendDeclined, sendCancelled } = require('./_email');
 
 function authorized(req) {
   const password = process.env.ADMIN_PASSWORD;
@@ -16,7 +17,17 @@ module.exports = async function handler(req, res) {
       const { id, status } = req.body || {};
       if (!id || !['pending','approved','declined','cancelled'].includes(status)) return res.status(400).json({ error: 'Invalid request' });
       const data = await supabaseFetch(`${TABLE}?id=eq.${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify({ status }) });
-      return res.status(200).json({ ok: true, booking: data && data[0] });
+      const booking = data && data[0];
+      let email = null;
+      try {
+        if (booking && status === 'approved') email = await sendApproved(booking);
+        if (booking && status === 'declined') email = await sendDeclined(booking);
+        if (booking && status === 'cancelled') email = await sendCancelled(booking);
+      } catch (emailError) {
+        console.error(`${status} email failed:`, emailError.message);
+        email = { error: emailError.message };
+      }
+      return res.status(200).json({ ok: true, booking, email });
     }
     if (req.method === 'POST') {
       const body = req.body || {};

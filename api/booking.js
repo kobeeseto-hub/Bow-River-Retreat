@@ -1,4 +1,5 @@
 const { supabaseFetch, TABLE } = require('./_supabase');
+const { sendRequestReceived } = require('./_email');
 
 function isDate(value) { return /^\d{4}-\d{2}-\d{2}$/.test(value || ''); }
 
@@ -22,7 +23,10 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({ error: 'Check-out must be after check-in' });
     }
     const data = await supabaseFetch(TABLE, { method: 'POST', body: JSON.stringify(booking) });
-    res.status(200).json({ ok: true, booking: data && data[0] });
+    const saved = data && data[0];
+    let email = null;
+    try { email = await sendRequestReceived(saved || booking); } catch (emailError) { console.error('Request-received email failed:', emailError.message); email = { error: emailError.message }; }
+    res.status(200).json({ ok: true, booking: saved, email });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
