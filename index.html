@@ -106,10 +106,9 @@ section{padding:78px 4.5vw}.two{display:grid;grid-template-columns:.9fr 1.5fr;ga
 </section>
 <section class="rates-section" id="rates"><div class="eyebrow">Rates</div><h2 class="section-title">Rates &amp; Details</h2><div class="rates"><div class="card rate-card"><div class="rate-icon">🛏</div><h3>Nightly Rates</h3><div class="small-line"></div><p>Our rates vary by season to reflect the beauty of each time of year.</p></div><div class="card rate-card"><div class="rate-icon">☑</div><h3>Manual Approval</h3><div class="small-line"></div><p>All booking requests are carefully reviewed before confirmation to ensure the best experience.</p></div><div class="card rate-card"><div class="rate-icon">👥</div><h3>Best For</h3><div class="small-line"></div><p>Perfect for couples, small families, visiting friends, and guests who want a private Canmore base.</p></div></div><div class="contact-strip"><span>📅 Have questions or need help planning your stay?</span><strong>We’re here to help.</strong><a class="btn" href="#book">Contact Us</a></div></section>
 <section id="location"><div class="eyebrow">Location</div><h2 class="section-title">South Canmore Location</h2><p class="lead">634A 7 St, Canmore, AB. Close to downtown Canmore, river pathways, restaurants, trails, and Banff National Park.</p><iframe class="map" loading="lazy" src="https://www.google.com/maps?q=634A%207%20St%2C%20Canmore%2C%20AB&amp;output=embed"></iframe></section>
-<section id="book"><div class="two"><div><div class="eyebrow">Book</div><h2 class="section-title">Request your stay.</h2><p class="lead">Booking requests are sent through our secure booking form and manually reviewed. No online payment is collected on this website.</p></div><form action="https://formspree.io/f/mjgqeqqp" class="card form" id="bookingForm" method="POST"><input name="Full Name" placeholder="Your name" required=""/><input name="Email" placeholder="Email" required="" type="email"/><input name="Phone" placeholder="Phone"/><input name="Check-in" placeholder="Check-in date" required=""/><input name="Check-out" placeholder="Check-out date" required=""/><select name="Guests" required=""><option value="">Number of guests</option><option>1</option><option>2</option><option>3</option><option>4</option></select><textarea name="Message" placeholder="Message or questions"></textarea><input name="_subject" type="hidden" value="New Bow River Retreat Booking Request"/><p style="font-size:13px;color:#5d665e;margin:0">Booking request only. No online payment will be collected.</p><button class="btn gold" type="submit">Send Booking Request</button><div id="formSuccess" style="display:none;background:#f3ead9;border:1px solid var(--line);border-radius:12px;padding:18px;color:#132318"><strong>Booking Request Sent!</strong><br/>Thank you for your interest in Bow River Retreat. We received your request and will respond within 24 hours.</div><div id="formError" style="display:none;background:#fff0ed;border:1px solid #e2b3a8;border-radius:12px;padding:18px;color:#8a3024"><strong>Something went wrong.</strong><br/>Please try again, or email kwokseto@gmail.com directly.</div></form></div></section>
+<section id="book"><div class="two"><div><div class="eyebrow">Book</div><h2 class="section-title">Request your stay.</h2><p class="lead">Booking requests are saved securely and manually reviewed. No online payment is collected on this website.</p></div><form class="card form" id="bookingForm" method="POST"><input name="guest_name" placeholder="Your name" required=""/><input name="email" placeholder="Email" required="" type="email"/><input name="phone" placeholder="Phone"/><input name="check_in" placeholder="Check-in date" required=""/><input name="check_out" placeholder="Check-out date" required=""/><select name="guests" required=""><option value="">Number of guests</option><option>1</option><option>2</option><option>3</option><option>4</option></select><textarea name="message" placeholder="Message or questions"></textarea><p style="font-size:13px;color:#5d665e;margin:0">Booking request only. No online payment will be collected.</p><button class="btn gold" type="submit">Send Booking Request</button><div id="formSuccess" style="display:none;background:#f3ead9;border:1px solid var(--line);border-radius:12px;padding:18px;color:#132318"><strong>Booking Request Sent!</strong><br/>Thank you for your interest in Bow River Retreat. We received your request and will respond within 24 hours.</div><div id="formError" style="display:none;background:#fff0ed;border:1px solid #e2b3a8;border-radius:12px;padding:18px;color:#8a3024"><strong>Something went wrong.</strong><br/>Please try again, or email kwokseto@gmail.com directly.</div></form></div></section>
 <footer><strong>Bow River Retreat</strong><br/>Luxury Mountain Suite • Sleeps 4 • 634A 7 St, Canmore, AB</footer>
 <script>
-const CALENDAR_ID = '2e69d9b24fdff8129eb8cdd5aed194dbd037371bf43b3d05f1ebe1f79d6d309e@group.calendar.google.com';
 const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 let today = startOfDay(new Date());
 let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
@@ -130,19 +129,19 @@ function isInSelectedRange(d){ if(!selectedStart || !selectedEnd) return false; 
 function formatShort(d){return d ? d.toLocaleDateString(undefined,{month:'short',day:'numeric'}) : 'Select date'}
 function updateStatus(message){ const el=document.getElementById('calendarStatus'); if(el) el.innerHTML = `<p style="margin:0;color:#5d665e;font-size:13px">${message}</p>`; }
 
-async function loadGoogleCalendar(){
-  updateStatus('Loading booked dates from Google Calendar...');
+async function loadBookings(){
+  updateStatus('Loading booked dates...');
   try {
     const response = await fetch('/api/bookings', { cache: 'no-store' });
     if (!response.ok) throw new Error('Calendar request failed');
     const data = await response.json();
     bookedDates = new Set(data.bookedDates || []);
     calendarLoaded = true;
-    updateStatus('Calendar synced with Google Calendar. Add bookings to “Bow River Retreat Bookings” to block dates automatically.');
+    updateStatus('Calendar synced with approved bookings. Approve requests in the admin dashboard to block dates automatically.');
   } catch (err) {
     console.error(err);
     calendarLoaded = false;
-    updateStatus('Could not load Google Calendar right now. The calendar will still show available dates, but booked dates may not appear until you refresh.');
+    updateStatus('Could not load booked dates right now. Please refresh in a moment.');
   }
   renderCalendar();
 }
@@ -229,15 +228,15 @@ function updatePanel(){
   document.getElementById('checkOutText').textContent = formatShort(selectedEnd);
   document.getElementById('nightsText').textContent = (selectedStart && selectedEnd) ? diffDays(selectedStart, selectedEnd) : '—';
   if(selectedStart && selectedEnd){
-    const checkin = document.querySelector('input[name="Check-in"]');
-    const checkout = document.querySelector('input[name="Check-out"]');
+    const checkin = document.querySelector('input[name="check_in"]');
+    const checkout = document.querySelector('input[name="check_out"]');
     if(checkin) checkin.value = dateKey(selectedStart); if(checkout) checkout.value = dateKey(selectedEnd);
   }
 }
 document.getElementById('prevMonth').addEventListener('click',()=>{viewDate.setMonth(viewDate.getMonth()-1); renderCalendar();});
 document.getElementById('nextMonth').addEventListener('click',()=>{viewDate.setMonth(viewDate.getMonth()+1); renderCalendar();});
 const refreshBtn = document.getElementById('refreshCalendar');
-if (refreshBtn) refreshBtn.addEventListener('click', loadGoogleCalendar);
+if (refreshBtn) refreshBtn.addEventListener('click', loadBookings);
 const bookingForm = document.getElementById('bookingForm');
 if (bookingForm) {
   bookingForm.addEventListener('submit', async (event) => {
@@ -247,10 +246,11 @@ if (bookingForm) {
     success.style.display = 'none';
     error.style.display = 'none';
     try {
-      const response = await fetch(bookingForm.action, {
+      const form = Object.fromEntries(new FormData(bookingForm).entries());
+      const response = await fetch('/api/booking', {
         method: 'POST',
-        body: new FormData(bookingForm),
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
       });
       if (response.ok) {
         bookingForm.reset();
@@ -268,6 +268,6 @@ if (bookingForm) {
 }
 
 renderCalendar();
-loadGoogleCalendar();
+loadBookings();
 </script>
 </body></html>

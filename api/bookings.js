@@ -1,81 +1,26 @@
-const CALENDAR_ID = '2e69d9b24fdff8129eb8cdd5aed194dbd037371bf43b3d05f1ebe1f79d6d309e@group.calendar.google.com';
-
-function pad(n) {
-  return String(n).padStart(2, '0');
-}
-
-function dateKey(date) {
-  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
-}
+const { supabaseFetch, TABLE } = require('./_supabase');
 
 function addDays(date, days) {
-  const next = new Date(date);
-  next.setDate(next.getDate() + days);
-  return next;
-}
-
-function unfoldICS(text) {
-  return text.replace(/\r\n[ \t]/g, '').replace(/\n[ \t]/g, '').split(/\r?\n/);
-}
-
-function parseICSDate(value) {
-  if (!value) return null;
-  const dateOnly = value.match(/^(\d{4})(\d{2})(\d{2})$/);
-  if (dateOnly) return new Date(Number(dateOnly[1]), Number(dateOnly[2]) - 1, Number(dateOnly[3]));
-  const dateTime = value.match(/^(\d{4})(\d{2})(\d{2})T/);
-  if (dateTime) return new Date(Number(dateTime[1]), Number(dateTime[2]) - 1, Number(dateTime[3]));
-  return null;
-}
-
-function parseICSBookedDates(ics) {
-  const lines = unfoldICS(ics);
-  const booked = new Set();
-  let inEvent = false;
-  let start = null;
-  let end = null;
-
-  for (const line of lines) {
-    if (line === 'BEGIN:VEVENT') {
-      inEvent = true;
-      start = null;
-      end = null;
-      continue;
-    }
-
-    if (line === 'END:VEVENT') {
-      if (start) {
-        const finalEnd = end || addDays(start, 1);
-        for (let d = new Date(start); d < finalEnd; d = addDays(d, 1)) {
-          booked.add(dateKey(d));
-        }
-      }
-      inEvent = false;
-      continue;
-    }
-
-    if (!inEvent) continue;
-    if (line.startsWith('DTSTART')) start = parseICSDate(line.split(':').pop());
-    if (line.startsWith('DTEND')) end = parseICSDate(line.split(':').pop());
-  }
-
-  return Array.from(booked).sort();
+  const d = new Date(date + 'T00:00:00');
+  d.setDate(d.getDate() + days);
+  return d.toISOString().slice(0, 10);
 }
 
 module.exports = async function handler(req, res) {
-  const icsUrl = `https://calendar.google.com/calendar/ical/${encodeURIComponent(CALENDAR_ID)}/public/basic.ics`;
-
+  if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
   try {
-    const response = await fetch(icsUrl, { cache: 'no-store' });
-    if (!response.ok) {
-      res.status(response.status).json({ error: 'Unable to load Google Calendar', bookedDates: [] });
-      return;
+    const rows = await supabaseFetch(`${TABLE}?select=id,check_in,check_out,status&status=eq.approved&order=check_in.asc`, { method: 'GET' });
+    const bookedDates = [];
+    for (const row of rows || []) {
+      let d = row.check_in;
+      while (d && row.check_out && d < row.check_out) {
+        bookedDates.push(d);
+        d = addDays(d, 1);
+      }
     }
-
-    const ics = await response.text();
-    const bookedDates = parseICSBookedDates(ics);
-    res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=300');
-    res.status(200).json({ bookedDates });
+    res.status(200).json({ bookings: rows || [], bookedDates });
   } catch (error) {
-    res.status(500).json({ error: 'Calendar sync failed', bookedDates: [] });
+    console.error(error);
+    res.status(500).json({ error: error.message });
   }
 };
