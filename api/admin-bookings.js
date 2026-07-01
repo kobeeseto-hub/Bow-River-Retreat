@@ -42,6 +42,12 @@ module.exports = async function handler(req, res) {
       }) });
       return res.status(200).json({ ok: true, booking: data && data[0] });
     }
+    if (req.method === 'DELETE') {
+      const { id } = req.body || {};
+      if (!id) return res.status(400).json({ error: 'Invalid request' });
+      await supabaseFetch(`${TABLE}?id=eq.${encodeURIComponent(id)}`, { method: 'DELETE' });
+      return res.status(200).json({ ok: true });
+    }
     return res.status(405).json({ error: 'Method not allowed' });
   } catch (error) {
     console.error(error);
