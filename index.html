@@ -20,10 +20,10 @@
 section{padding:78px 4.5vw}.two{display:grid;grid-template-columns:.9fr 1.5fr;gap:42px}.section-title{font-family:Georgia,'Times New Roman',serif;font-size:clamp(42px,4vw,62px);line-height:1.03;margin:18px 0}.lead{font-size:18px;color:var(--muted);max-width:720px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:var(--shadow)}.feature{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start}.feature .ico{font-size:32px}.feature h3{margin:0 0 6px}.feature p{margin:0;color:var(--muted)}
 .gallery-section{background:var(--white);}.center{text-align:center}.filters{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:22px 0 28px}.pill{border:1px solid var(--line);border-radius:999px;padding:8px 18px;background:#fff;color:#1b261f;font-weight:650;font-size:14px}.pill.active{background:var(--deep);color:#fff;border-color:var(--deep)}
 .gallery-grid{display:grid;grid-template-columns:1.1fr 1fr 1.05fr;grid-template-rows:260px 260px;gap:14px;margin-top:34px}.gallery-item{border-radius:12px;overflow:hidden;box-shadow:var(--shadow);background:#fff}.gallery-item img{width:100%;height:100%;display:block;object-fit:cover}.gallery-item.plan{grid-column:3;grid-row:1 / span 2}.gallery-item.plan img{object-fit:contain;background:#fff;padding:8px}.gallery-note{margin-top:18px;background:#fff8ed;border:1px solid var(--line);border-radius:12px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.gallery-note p{margin:0;color:#2a332d}
-.calendar{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
-.calendar-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}.calendar-title{font-family:Georgia,'Times New Roman',serif;font-size:28px;margin:0;color:var(--green)}.cal-nav{display:flex;gap:10px}.cal-nav button,.admin-toggle{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;font-weight:900;cursor:pointer}.cal-nav button:disabled{opacity:.4;cursor:not-allowed}.cal-week,.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.cal-week div{text-align:center;font-size:12px;text-transform:uppercase;color:var(--muted);font-weight:900;padding:8px}.cal-day{min-height:72px;border:1px solid #efe4d4;background:#fff;border-radius:12px;padding:9px;text-align:left;cursor:pointer;transition:.18s ease;position:relative}.cal-day:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.08)}.cal-day .num{font-weight:900}.cal-day .status{display:block;font-size:11px;margin-top:8px;color:#617065}.cal-day.available{background:#fbfff7}.cal-day.past{background:#f3f0ea;color:#a19a8e;cursor:not-allowed;opacity:.68}.cal-day.past:hover{transform:none;box-shadow:none}.cal-day.past .status{color:#a19a8e}.cal-day.booked{background:#f4e0db;color:#8a3024;cursor:not-allowed;text-decoration:line-through}.cal-day.booked .status{color:#8a3024}.cal-day.selected,.cal-day.in-range{background:#132318;color:#fff;border-color:#132318}.cal-day.empty{background:transparent;border:0;cursor:default;box-shadow:none}.calendar-side{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}.booking-panel{background:#fbf6ee;border:1px solid var(--line);border-radius:18px;padding:24px}.booking-panel h3{font-family:Georgia,'Times New Roman',serif;font-size:30px;margin:0 0 10px}.booking-detail{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:12px 0;color:#2d382f}.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;color:var(--muted);font-size:14px}.dot{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:7px}.dot.avail{background:#dcebd6}.dot.book{background:#e2b3a8}.dot.sel{background:#132318}.dot.past{background:#d8d2c8}.owner-panel{display:none;margin-top:18px;background:#fff8ed;border:1px solid var(--line);border-radius:14px;padding:16px}.owner-panel.show{display:block}.owner-panel input{padding:11px;border:1px solid var(--line);border-radius:8px;margin:5px;max-width:150px}.owner-panel button{margin:5px;border:0;border-radius:8px;background:var(--deep);color:#fff;padding:11px 14px;font-weight:900;cursor:pointer}.owner-panel button.gold{background:var(--gold)}
+#availability{background:linear-gradient(180deg,#fffdf8 0%,#fbf6ee 100%);padding-top:92px;padding-bottom:70px}.availability-wrap{max-width:1320px;margin:0 auto}.calendar-side{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch;margin-top:34px}.calendar{background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:18px;padding:28px 28px 24px;box-shadow:0 18px 45px rgba(38,30,17,.10)}
+.calendar-head{display:grid;grid-template-columns:52px 1fr 52px;align-items:center;margin-bottom:24px}.calendar-title{font-family:Georgia,'Times New Roman',serif;font-size:32px;margin:0;color:var(--green);text-align:center}.calendar-head button{width:42px;height:42px;border:1px solid #cfc7bb;background:#fff;border-radius:6px;font-size:28px;line-height:1;color:var(--green);font-weight:900;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.05)}.calendar-head button:hover{background:#f8f1e7}.cal-week,.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}.cal-week div{text-align:center;font-size:13px;text-transform:uppercase;color:var(--muted);font-weight:900;padding:8px}.cal-day{min-height:84px;border:1px solid #efe4d4;background:#fffdf8;border-radius:10px;padding:11px;text-align:left;cursor:pointer;transition:.18s ease;position:relative}.cal-day:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.08)}.cal-day .num{font-weight:900;font-size:16px}.cal-day .status{display:block;font-size:12px;margin-top:8px;color:#0d5d2d;font-weight:700}.cal-day.available{background:#fffffb}.cal-day.past{background:#f1eee8;color:#9a9a92;cursor:not-allowed;opacity:.65}.cal-day.booked{background:#fff0ed;color:#d11f1f;cursor:not-allowed;border-color:#f2ccc4}.cal-day.booked .num{color:#d11f1f}.cal-day.booked .status{color:#d11f1f}.cal-day.past .status{color:#9a9a92}.cal-day.selected,.cal-day.in-range{background:#fff2cf;color:#132318;border-color:#f0d8a5}.cal-day.selected .status,.cal-day.in-range .status{color:#132318}.cal-day.empty{background:transparent;border:0;cursor:default;box-shadow:none}.booking-panel{background:rgba(255,253,248,.92);border:1px solid var(--line);border-radius:18px;padding:34px 36px;box-shadow:0 18px 45px rgba(38,30,17,.08)}.booking-panel h3{font-family:Georgia,'Times New Roman',serif;font-size:34px;line-height:1.05;margin:0 0 18px;color:var(--green)}.booking-panel .lead{max-width:430px}.booking-detail{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:14px 0;color:#2d382f;font-size:17px}.booking-detail strong{color:#445047}.legend{display:flex;gap:36px;flex-wrap:wrap;margin-top:26px;color:var(--muted);font-size:15px;align-items:center}.dot{width:26px;height:26px;border-radius:6px;display:inline-block;margin-right:10px;vertical-align:middle;border:1px solid var(--line)}.dot.avail{background:#fffdf8}.dot.book{background:#fff0ed;border-color:#f2ccc4}.dot.sel{background:#fff2cf;border-color:#f0d8a5}.calendar-benefits{max-width:1320px;margin:28px auto 0;background:#fff8ed;border:1px solid var(--line);border-radius:14px;padding:24px 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;box-shadow:0 12px 34px rgba(38,30,17,.08)}.benefit{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:center}.benefit-icon{font-size:42px;color:var(--green);line-height:1}.benefit strong{display:block;text-transform:uppercase;letter-spacing:.04em;color:var(--green);font-weight:900}.benefit span{display:block;color:var(--muted);font-size:15px}.owner-panel{display:none}.owner-panel.show{display:none}.admin-toggle{display:none!important} 
 .rates-section{background:var(--white)}.rates{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.rate-card{text-align:center;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center}.rate-icon{width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:#f4eadc;color:var(--gold);font-size:38px;margin-bottom:22px}.rate-card h3{font-family:Georgia,'Times New Roman',serif;font-size:28px;margin:0}.small-line{width:48px;height:2px;background:var(--gold);margin:16px auto 22px}.rate-card p{font-size:18px;color:#333;max-width:330px;margin:0}.contact-strip{margin-top:36px;border-radius:14px;background:#f6ecdd;border:1px solid var(--line);padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}.contact-strip strong{color:var(--gold);letter-spacing:.18em;text-transform:uppercase}.form{display:grid;gap:14px}.form input,.form textarea,.form select{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:9px;font:inherit}.form textarea{min-height:120px}.map{width:100%;height:360px;border:0;border-radius:14px;box-shadow:var(--shadow)}footer{padding:38px 4.5vw;background:#07130d;color:#fff}
-@media(max-width:1050px){html{scroll-padding-top:0}#suite,#gallery,#amenities,#availability,#rates,#location,#book{scroll-margin-top:0}.calendar-side{grid-template-columns:1fr}.cal-day{min-height:58px;padding:7px}.cal-day .status{display:none}.links{display:none}.nav{position:static;height:auto;padding:18px 5vw}.hero{display:block;min-height:0}.hero-copy{padding:46px 5vw}.hero-image{min-height:430px}.quick{grid-template-columns:1fr 1fr}.info-bar,.two,.features,.rates{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr;grid-template-rows:auto}.gallery-item{min-height:280px}.gallery-item.plan{grid-column:auto;grid-row:auto}.hero h1{font-size:58px}.brand-title{font-size:18px}.contact-strip{align-items:flex-start;flex-direction:column}.gallery-note{align-items:flex-start;flex-direction:column}}
+@media(max-width:1050px){html{scroll-padding-top:0}#suite,#gallery,#amenities,#availability,#rates,#location,#book{scroll-margin-top:0}.calendar-side{grid-template-columns:1fr}.cal-day{min-height:58px;padding:7px}.cal-day .status{display:none}.links{display:none}.nav{position:static;height:auto;padding:18px 5vw}.hero{display:block;min-height:0}.hero-copy{padding:46px 5vw}.hero-image{min-height:430px}.quick{grid-template-columns:1fr 1fr}.info-bar,.two,.features,.rates{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr;grid-template-rows:auto}.gallery-item{min-height:280px}.gallery-item.plan{grid-column:auto;grid-row:auto}.hero h1{font-size:58px}.brand-title{font-size:18px}.contact-strip{align-items:flex-start;flex-direction:column}.gallery-note{align-items:flex-start;flex-direction:column}.calendar-benefits{grid-template-columns:1fr}.calendar-side{margin-top:24px}.booking-panel{padding:26px 24px}}
 </style>
 </head>
 <body>
@@ -72,7 +72,8 @@ section{padding:78px 4.5vw}.two{display:grid;grid-template-columns:.9fr 1.5fr;ga
 <div class="gallery-note"><p>📷 These photos showcase the beauty and comfort of Bow River Retreat.<br/>We can’t wait to welcome you.</p><a class="btn gold" href="#book">Request Booking →</a></div>
 </section>
 <section id="availability">
-<div class="center"><div class="eyebrow">Availability</div><h2 class="section-title">Choose your dates.</h2><p class="lead" style="margin-left:auto;margin-right:auto">Select your check-in and check-out dates to request a stay. All bookings are request-only and manually approved — no online payment is collected.</p></div>
+<div class="availability-wrap">
+<div class="center"><div class="eyebrow">Availability</div><h2 class="section-title">Choose your dates.</h2><p class="lead" style="margin-left:auto;margin-right:auto">Select your check-in and check-out dates to request a stay.<br/>All bookings are request-only and manually approved — no online payment is collected.</p></div>
 <div class="calendar-side">
 <div class="calendar">
 <div class="calendar-head">
@@ -82,24 +83,24 @@ section{padding:78px 4.5vw}.two{display:grid;grid-template-columns:.9fr 1.5fr;ga
 </div>
 <div class="cal-week"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
 <div class="cal-days" id="calendarDays"></div>
-<div class="legend"><span><i class="dot avail"></i>Available</span><span><i class="dot book"></i>Booked</span><span><i class="dot sel"></i>Selected</span><span><i class="dot past"></i>Past dates unavailable</span></div>
-<button class="admin-toggle" id="adminToggle" style="margin-top:18px" type="button">Owner: Edit booked dates</button>
-<div class="owner-panel" id="ownerPanel">
-<strong>Owner date blocker</strong><br/>
-<input aria-label="Start date" id="blockStart" type="date"/><input aria-label="End date" id="blockEnd" type="date"/>
-<button id="blockDates" type="button">Mark Booked</button><button class="gold" id="unblockDates" type="button">Mark Available</button>
-<p style="margin:8px 5px 0;color:#5d665e;font-size:13px">This saves in this browser for now. When the site goes live, we can connect this to a real database so both of you can update it from any device.</p>
-</div>
+<div class="legend"><span><i class="dot avail"></i>Available</span><span><i class="dot book"></i>Booked</span><span><i class="dot sel"></i>Selected</span></div>
+<div id="calendarStatus" style="display:none"></div>
 </div>
 <div class="booking-panel">
 <h3>Request Your Stay</h3>
-<p class="lead" style="font-size:16px">Pick your dates, then send a request. We personally approve every booking.</p>
+<p class="lead" style="font-size:17px">Pick your dates, then send a request.<br/>We personally approve every booking.</p>
 <div class="booking-detail"><span>Check-in</span><strong id="checkInText">Select date</strong></div>
 <div class="booking-detail"><span>Check-out</span><strong id="checkOutText">Select date</strong></div>
 <div class="booking-detail"><span>Nights</span><strong id="nightsText">—</strong></div>
 <div class="booking-detail"><span>Guests</span><strong>Up to 4</strong></div>
-<a class="btn gold" href="#book" id="calendarRequestBtn" style="width:100%;margin-top:22px">Request Booking</a>
-<p style="font-size:13px;color:#5d665e;margin-top:14px">Available dates are shown in white. Booked dates cannot be selected. This website is for booking requests only; no online payment is collected.</p>
+<a class="btn gold" href="#book" id="calendarRequestBtn" style="width:100%;margin-top:28px;padding:18px 22px;font-size:16px">Request Booking</a>
+<p style="font-size:15px;color:#5d665e;margin-top:22px;line-height:1.6">Available dates are shown in white.<br/>Booked dates cannot be selected.<br/>This website is for booking requests only; no online payment is collected.</p>
+</div>
+</div>
+<div class="calendar-benefits">
+<div class="benefit"><div class="benefit-icon">⌖</div><div><strong>Downtown Canmore</strong><span>Steps to restaurants, shops and the Bow River.</span></div></div>
+<div class="benefit"><div class="benefit-icon">⌁</div><div><strong>Modern Comfort</strong><span>Private 1-bedroom suite with full kitchen and in-floor heat.</span></div></div>
+<div class="benefit"><div class="benefit-icon">▣</div><div><strong>Request-Only Bookings</strong><span>We personally approve every stay to ensure the best experience.</span></div></div>
 </div>
 </div>
 </section>
@@ -108,30 +109,85 @@ section{padding:78px 4.5vw}.two{display:grid;grid-template-columns:.9fr 1.5fr;ga
 <section id="book"><div class="two"><div><div class="eyebrow">Book</div><h2 class="section-title">Request your stay.</h2><p class="lead">Booking requests are sent through our secure booking form and manually reviewed. No online payment is collected on this website.</p></div><form action="https://formspree.io/f/mjgqeqqp" class="card form" id="bookingForm" method="POST"><input name="Full Name" placeholder="Your name" required=""/><input name="Email" placeholder="Email" required="" type="email"/><input name="Phone" placeholder="Phone"/><input name="Check-in" placeholder="Check-in date" required=""/><input name="Check-out" placeholder="Check-out date" required=""/><select name="Guests" required=""><option value="">Number of guests</option><option>1</option><option>2</option><option>3</option><option>4</option></select><textarea name="Message" placeholder="Message or questions"></textarea><input name="_subject" type="hidden" value="New Bow River Retreat Booking Request"/><p style="font-size:13px;color:#5d665e;margin:0">Booking request only. No online payment will be collected.</p><button class="btn gold" type="submit">Send Booking Request</button><div id="formSuccess" style="display:none;background:#f3ead9;border:1px solid var(--line);border-radius:12px;padding:18px;color:#132318"><strong>Booking Request Sent!</strong><br/>Thank you for your interest in Bow River Retreat. We received your request and will respond within 24 hours.</div><div id="formError" style="display:none;background:#fff0ed;border:1px solid #e2b3a8;border-radius:12px;padding:18px;color:#8a3024"><strong>Something went wrong.</strong><br/>Please try again, or email kwokseto@gmail.com directly.</div></form></div></section>
 <footer><strong>Bow River Retreat</strong><br/>Luxury Mountain Suite • Sleeps 4 • 634A 7 St, Canmore, AB</footer>
 <script>
+const CALENDAR_ID = '2e69d9b24fdff8129eb8cdd5aed194dbd037371bf43b3d05f1ebe1f79d6d309e@group.calendar.google.com';
 const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-let today = new Date();
-today = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+let today = startOfDay(new Date());
 let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
 let selectedStart = null;
 let selectedEnd = null;
-let bookedDates = new Set(JSON.parse(localStorage.getItem('bowRiverBookedDatesV8') || '[]'));
-// Calendar starts fully available. Dates only turn booked after you mark them in Owner mode.
+let bookedDates = new Set();
+let calendarLoaded = false;
+
 function pad(n){return String(n).padStart(2,'0')}
 function dateKey(d){return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`}
 function parseDate(s){const [y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d)}
 function addDays(d,n){const x=new Date(d); x.setDate(x.getDate()+n); return x}
+function startOfDay(d){return new Date(d.getFullYear(), d.getMonth(), d.getDate())}
 function diffDays(a,b){return Math.round((b-a)/(1000*60*60*24))}
+function isPast(d){return startOfDay(d) < today}
 function isBooked(key){return bookedDates.has(key)}
-function isPastDate(d){return d < today}
-function isCurrentMonthView(){return viewDate.getFullYear() === today.getFullYear() && viewDate.getMonth() === today.getMonth()}
 function isInSelectedRange(d){ if(!selectedStart || !selectedEnd) return false; return d > selectedStart && d < selectedEnd; }
 function formatShort(d){return d ? d.toLocaleDateString(undefined,{month:'short',day:'numeric'}) : 'Select date'}
-function saveBooked(){localStorage.setItem('bowRiverBookedDatesV8', JSON.stringify([...bookedDates]));}
+function updateStatus(message){ const el=document.getElementById('calendarStatus'); if(el) el.innerHTML = `<p style="margin:0;color:#5d665e;font-size:13px">${message}</p>`; }
+
+async function loadGoogleCalendar(){
+  updateStatus('Loading booked dates from Google Calendar...');
+  try {
+    const response = await fetch('/api/bookings', { cache: 'no-store' });
+    if (!response.ok) throw new Error('Calendar request failed');
+    const data = await response.json();
+    bookedDates = new Set(data.bookedDates || []);
+    calendarLoaded = true;
+    updateStatus('Calendar synced with Google Calendar. Add bookings to “Bow River Retreat Bookings” to block dates automatically.');
+  } catch (err) {
+    console.error(err);
+    calendarLoaded = false;
+    updateStatus('Could not load Google Calendar right now. The calendar will still show available dates, but booked dates may not appear until you refresh.');
+  }
+  renderCalendar();
+}
+
+function unfoldICS(text){
+  return text.replace(/\r\n[ \t]/g, '').replace(/\n[ \t]/g, '').split(/\r?\n/);
+}
+
+function parseICSDate(value){
+  if (!value) return null;
+  const dateOnly = value.match(/^(\d{4})(\d{2})(\d{2})$/);
+  if (dateOnly) return new Date(Number(dateOnly[1]), Number(dateOnly[2])-1, Number(dateOnly[3]));
+  const dateTime = value.match(/^(\d{4})(\d{2})(\d{2})T/);
+  if (dateTime) return new Date(Number(dateTime[1]), Number(dateTime[2])-1, Number(dateTime[3]));
+  return null;
+}
+
+function parseICSBookedDates(ics){
+  const lines = unfoldICS(ics);
+  const set = new Set();
+  let inEvent = false;
+  let start = null;
+  let end = null;
+  for (const line of lines) {
+    if (line === 'BEGIN:VEVENT') { inEvent = true; start = null; end = null; continue; }
+    if (line === 'END:VEVENT') {
+      if (start) {
+        const finalEnd = end || addDays(start, 1);
+        for (let d = new Date(start); d < finalEnd; d = addDays(d, 1)) {
+          set.add(dateKey(d));
+        }
+      }
+      inEvent = false; continue;
+    }
+    if (!inEvent) continue;
+    if (line.startsWith('DTSTART')) start = parseICSDate(line.split(':').pop());
+    if (line.startsWith('DTEND')) end = parseICSDate(line.split(':').pop());
+  }
+  return set;
+}
+
 function renderCalendar(){
   const title = document.getElementById('calendarTitle');
   const days = document.getElementById('calendarDays');
   title.textContent = `${monthNames[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
-  document.getElementById('prevMonth').disabled = isCurrentMonthView();
   days.innerHTML = '';
   const first = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
   const last = new Date(viewDate.getFullYear(), viewDate.getMonth()+1, 0);
@@ -140,26 +196,30 @@ function renderCalendar(){
     const d = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
     const key = dateKey(d);
     const el = document.createElement('button');
-    const past = isPastDate(d);
-    el.type='button'; el.className='cal-day available';
-    if(past) el.className='cal-day past';
-    if(isBooked(key)) el.className='cal-day booked';
-    if(!past && !isBooked(key) && ((selectedStart && key===dateKey(selectedStart)) || (selectedEnd && key===dateKey(selectedEnd)))) el.className='cal-day selected';
-    if(!past && !isBooked(key) && isInSelectedRange(d)) el.className='cal-day in-range';
-    el.disabled = past || isBooked(key);
-    el.innerHTML = `<span class="num">${day}</span><span class="status">${past?'Unavailable':(isBooked(key)?'Booked':'Available')}</span>`;
-    el.addEventListener('click', () => selectDate(d));
+    el.type='button';
+    const past = isPast(d);
+    const booked = isBooked(key);
+    el.className = past ? 'cal-day past' : booked ? 'cal-day booked' : 'cal-day available';
+    if(!past && !booked && ((selectedStart && key===dateKey(selectedStart)) || (selectedEnd && key===dateKey(selectedEnd)))) el.className='cal-day selected';
+    if(!past && !booked && isInSelectedRange(d)) el.className='cal-day in-range';
+    const status = past ? 'Past' : booked ? 'Booked' : 'Available';
+    el.innerHTML = `<span class="num">${day}</span><span class="status">${status}</span>`;
+    if(!past && !booked) el.addEventListener('click', () => selectDate(d));
     days.appendChild(el);
   }
   updatePanel();
 }
 function selectDate(d){
   const key=dateKey(d);
-  if(isPastDate(d) || isBooked(key)) return;
-  if(!selectedStart || selectedEnd || d <= selectedStart){ selectedStart = d; selectedEnd = null; }
+  if(isPast(d)) return;
+  if(isBooked(key)) return alert('This date is unavailable. Please choose another date.');
+  if(!selectedStart || selectedEnd || d < selectedStart){ selectedStart = d; selectedEnd = null; }
   else {
     let x = new Date(selectedStart);
-    while(x <= d){ if(isBooked(dateKey(x))) return alert('Those dates include a booked night. Please choose different dates.'); x = addDays(x,1); }
+    while(x < d){
+      if(isPast(x) || isBooked(dateKey(x))) return alert('Those dates include an unavailable night. Please choose different dates.');
+      x = addDays(x,1);
+    }
     selectedEnd = d;
   }
   renderCalendar();
@@ -168,27 +228,16 @@ function updatePanel(){
   document.getElementById('checkInText').textContent = formatShort(selectedStart);
   document.getElementById('checkOutText').textContent = formatShort(selectedEnd);
   document.getElementById('nightsText').textContent = (selectedStart && selectedEnd) ? diffDays(selectedStart, selectedEnd) : '—';
-  const btn = document.getElementById('calendarRequestBtn');
   if(selectedStart && selectedEnd){
-    const ci=dateKey(selectedStart), co=dateKey(selectedEnd);
-    btn.href = `#book`;
     const checkin = document.querySelector('input[name="Check-in"]');
     const checkout = document.querySelector('input[name="Check-out"]');
-    if(checkin) checkin.value = ci; if(checkout) checkout.value = co;
+    if(checkin) checkin.value = dateKey(selectedStart); if(checkout) checkout.value = dateKey(selectedEnd);
   }
 }
-document.getElementById('prevMonth').addEventListener('click',()=>{ if(isCurrentMonthView()) return; viewDate.setMonth(viewDate.getMonth()-1); renderCalendar();});
+document.getElementById('prevMonth').addEventListener('click',()=>{viewDate.setMonth(viewDate.getMonth()-1); renderCalendar();});
 document.getElementById('nextMonth').addEventListener('click',()=>{viewDate.setMonth(viewDate.getMonth()+1); renderCalendar();});
-document.getElementById('adminToggle').addEventListener('click',()=>document.getElementById('ownerPanel').classList.toggle('show'));
-function editRange(makeBooked){
-  const s=document.getElementById('blockStart').value, e=document.getElementById('blockEnd').value;
-  if(!s || !e) return alert('Choose a start and end date.');
-  let a=parseDate(s), b=parseDate(e); if(b<a) [a,b]=[b,a];
-  for(let d=new Date(a); d<=b; d=addDays(d,1)){ makeBooked ? bookedDates.add(dateKey(d)) : bookedDates.delete(dateKey(d)); }
-  saveBooked(); renderCalendar();
-}
-document.getElementById('blockDates').addEventListener('click',()=>editRange(true));
-document.getElementById('unblockDates').addEventListener('click',()=>editRange(false));
+const refreshBtn = document.getElementById('refreshCalendar');
+if (refreshBtn) refreshBtn.addEventListener('click', loadGoogleCalendar);
 const bookingForm = document.getElementById('bookingForm');
 if (bookingForm) {
   bookingForm.addEventListener('submit', async (event) => {
@@ -219,5 +268,6 @@ if (bookingForm) {
 }
 
 renderCalendar();
+loadGoogleCalendar();
 </script>
 </body></html>
